@@ -5,20 +5,20 @@
 class Flow < Formula
   desc "Devops CLI to handle basic devops tasks"
   homepage "https://github.com/Edens-Angel/flow-cli"
-  version "0.2"
+  version "0.3"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/Edens-Angel/flow-cli/releases/download/v0.2/flow-cli_0.2_darwin_arm64.tar.gz"
-      sha256 "aa6fb0c9cb4b50f034b9ae59b9405193aefc920bc2686ee1c70603f219eaaf3d"
+      url "https://github.com/Edens-Angel/flow-cli/releases/download/v0.3/flow-cli_0.3_darwin_arm64.tar.gz"
+      sha256 "42393b9e2bf9ec973d65b94ab4c458ee238d51ee48ed960d1f96ebe1b5d97e21"
 
       def install
         bin.install "flow"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Edens-Angel/flow-cli/releases/download/v0.2/flow-cli_0.2_darwin_amd64.tar.gz"
-      sha256 "e571862cf8493ce97fe827d1b472fee4114f1ec7c17b10f830454aec726c2b6a"
+      url "https://github.com/Edens-Angel/flow-cli/releases/download/v0.3/flow-cli_0.3_darwin_amd64.tar.gz"
+      sha256 "96bacd43194fc9ee23ef6814a837e4154ed7011d43fb280c82d6f49aeb0ee7ea"
 
       def install
         bin.install "flow"
@@ -28,16 +28,16 @@ class Flow < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Edens-Angel/flow-cli/releases/download/v0.2/flow-cli_0.2_linux_arm64.tar.gz"
-      sha256 "3c883642720f82b0b708d156808f4a7a6682aace01f8177362f7137af93ffb3f"
+      url "https://github.com/Edens-Angel/flow-cli/releases/download/v0.3/flow-cli_0.3_linux_arm64.tar.gz"
+      sha256 "83476290f98db29b8dc678f8145837082038c824ed27cc5a1d3c81eba64d18d5"
 
       def install
         bin.install "flow"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Edens-Angel/flow-cli/releases/download/v0.2/flow-cli_0.2_linux_amd64.tar.gz"
-      sha256 "01d57fdeb3117326ce5faec2875011630f28514447466f73a086a649cb50d33e"
+      url "https://github.com/Edens-Angel/flow-cli/releases/download/v0.3/flow-cli_0.3_linux_amd64.tar.gz"
+      sha256 "c40ed4835c4ce66ac081c321a17606fe80fa9cde92d0bdb550b107ffc9025dd1"
 
       def install
         bin.install "flow"
