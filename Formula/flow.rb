@@ -5,20 +5,20 @@
 class Flow < Formula
   desc "Devops CLI to handle basic devops tasks"
   homepage "https://github.com/Edens-Angel/flow-cli"
-  version "0.31"
+  version "0.4"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/Edens-Angel/flow-cli/releases/download/v0.31/flow-cli_0.31_darwin_arm64.tar.gz"
-      sha256 "179bba0812098e7b88922613afb9f7d9cc1a06f91659c31d67c72c08d9d53de3"
+    on_intel do
+      url "https://github.com/Edens-Angel/flow-cli/releases/download/v0.4/flow-cli_0.4_darwin_amd64.tar.gz"
+      sha256 "b027fe0bbca4486c582e6a4646887a6cd9fba693a8e6cd3fd406e7d37462fd57"
 
       def install
         bin.install "flow"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/Edens-Angel/flow-cli/releases/download/v0.31/flow-cli_0.31_darwin_amd64.tar.gz"
-      sha256 "18ac7e8493a63f9333d31abf559b4c42621797e3bbafc88b3b1a898502783f65"
+    on_arm do
+      url "https://github.com/Edens-Angel/flow-cli/releases/download/v0.4/flow-cli_0.4_darwin_arm64.tar.gz"
+      sha256 "f660388eba57b75e694344f887278d7e56a920ebeb71035d0c832fe5591c2e54"
 
       def install
         bin.install "flow"
@@ -27,20 +27,24 @@ class Flow < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Edens-Angel/flow-cli/releases/download/v0.31/flow-cli_0.31_linux_arm64.tar.gz"
-      sha256 "11d74f6d688089643b8cf72a2b66e6e62c5e98e0447bc09e937f7d954c8b3ceb"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/Edens-Angel/flow-cli/releases/download/v0.4/flow-cli_0.4_linux_amd64.tar.gz"
+        sha256 "eb51114638dcc0b2ecced0f5e25d88b87e574dddc866246820d0071fd0388d0b"
 
-      def install
-        bin.install "flow"
+        def install
+          bin.install "flow"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/Edens-Angel/flow-cli/releases/download/v0.31/flow-cli_0.31_linux_amd64.tar.gz"
-      sha256 "f589e52264846789526197d98ec0a6ad5fdea1c72c55ae9462e3056d60782dab"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/Edens-Angel/flow-cli/releases/download/v0.4/flow-cli_0.4_linux_arm64.tar.gz"
+        sha256 "2f152796cf3b2126302a51c615a4d3661f67f661ce089b40c0c9bb2fac0f1d6f"
 
-      def install
-        bin.install "flow"
+        def install
+          bin.install "flow"
+        end
       end
     end
   end
